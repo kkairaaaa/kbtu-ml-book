@@ -598,13 +598,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RlcZQZUqVeDI" data-shufflequestions="False"
+<div class="output text_html"><div id="YWWyWVqOCaUF" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#RlcZQZUqVeDI {
+#YWWyWVqOCaUF {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -775,14 +775,14 @@ document.write(`
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_n_layers");
-            var questionsRlcZQZUqVeDI;
+            var questionsYWWyWVqOCaUF;
             try {
-               questionsRlcZQZUqVeDI=JSON.parse(window.atob(element.innerHTML));
+               questionsYWWyWVqOCaUF=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsRlcZQZUqVeDI = JSON.parse(element.innerHTML);
+               questionsYWWyWVqOCaUF = JSON.parse(element.innerHTML);
             }
-            console.log(questionsRlcZQZUqVeDI);;
+            console.log(questionsYWWyWVqOCaUF);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1531,8 +1531,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("RlcZQZUqVeDI")) {
-            show_questions(questionsRlcZQZUqVeDI,  RlcZQZUqVeDI); 
+          if(document.getElementById("YWWyWVqOCaUF")) {
+            show_questions(questionsYWWyWVqOCaUF,  YWWyWVqOCaUF); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1541,8 +1541,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("RlcZQZUqVeDI");
-        // console.log(document.getElementById("RlcZQZUqVeDI"));
+        //console.log("YWWyWVqOCaUF");
+        // console.log(document.getElementById("YWWyWVqOCaUF"));
 
         try_show();
         }
@@ -1558,7 +1558,6 @@ if (typeof version == 'undefined') {
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">widgets</span>
 
 <span class="c1"># Activation functions and their derivatives</span>
 <span class="k">def</span> <span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1567,65 +1566,30 @@ if (typeof version == 'undefined') {
 <span class="k">def</span> <span class="nf">sigmoid_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">tanh_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">relu_derivative</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Function to create a button-like widget to select activation function</span>
-<span class="k">def</span> <span class="nf">choose_activation_function</span><span class="p">():</span>
-    <span class="n">activation_funcs</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;Sigmoid&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">sigmoid</span><span class="p">,</span> <span class="n">sigmoid_derivative</span><span class="p">),</span>
-        <span class="s1">&#39;Tanh&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">tanh</span><span class="p">,</span> <span class="n">tanh_derivative</span><span class="p">),</span>
-        <span class="s1">&#39;ReLU&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">relu</span><span class="p">,</span> <span class="n">relu_derivative</span><span class="p">)</span>
-    <span class="p">}</span>
-    
-    <span class="n">activation_buttons</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span>
-        <span class="n">options</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">activation_funcs</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span>
-        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Activation Function:&#39;</span><span class="p">,</span>
-        <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">button_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
-    <span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">activation_buttons</span><span class="p">,</span> <span class="n">activation_funcs</span>
-
-<span class="c1"># Get activation function selection from the user</span>
-<span class="n">activation_buttons</span><span class="p">,</span> <span class="n">activation_funcs</span> <span class="o">=</span> <span class="n">choose_activation_function</span><span class="p">()</span>
-
-<span class="c1"># Display activation function selection</span>
-<span class="n">display</span><span class="p">(</span><span class="n">activation_buttons</span><span class="p">)</span>
-
 <span class="c1"># Function to perform the forward pass</span>
-<span class="k">def</span> <span class="nf">forward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activation</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">forward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">):</span>
     <span class="n">layer_input</span> <span class="o">=</span> <span class="n">X</span>
     <span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">)):</span>
-        <span class="n">layer_output</span> <span class="o">=</span> <span class="n">activation</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">layer_input</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">biases</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">layer_output</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">layer_input</span><span class="p">,</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="n">biases</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer_output</span><span class="p">)</span>
         <span class="n">layer_input</span> <span class="o">=</span> <span class="n">layer_output</span>
     <span class="k">return</span> <span class="n">outputs</span>
 
 <span class="c1"># Function to perform the backward pass</span>
-<span class="k">def</span> <span class="nf">backward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activation_deriv</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">backward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">):</span>
     <span class="n">num_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
     <span class="n">error_terms</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_layers</span>
     <span class="n">gradients_wrt_weights</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_layers</span>
     <span class="n">gradients_wrt_biases</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_layers</span>
 
     <span class="n">error</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">outputs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">error_terms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">error</span> <span class="o">*</span> <span class="n">activation_deriv</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">error_terms</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">error</span> <span class="o">*</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">gradients_wrt_weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error_terms</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="n">gradients_wrt_biases</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error_terms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">error_terms</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">error_terms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">activation_deriv</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">error_terms</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">error_terms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weights</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigmoid_derivative</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
 
     <span class="n">gradients_wrt_weights</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">error_terms</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">gradients_wrt_biases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error_terms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1640,7 +1604,7 @@ if (typeof version == 'undefined') {
     <span class="k">return</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span>
 
 <span class="c1"># Function to train the MLP</span>
-<span class="k">def</span> <span class="nf">train_MLP</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">num_hidden_layers</span><span class="p">,</span> <span class="n">hidden_layer_units</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">activation_deriv</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">train_MLP</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">num_hidden_layers</span><span class="p">,</span> <span class="n">hidden_layer_units</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
     <span class="n">input_dim</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">output_dim</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
@@ -1658,17 +1622,17 @@ if (typeof version == 'undefined') {
     <span class="n">training_errors</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
-        <span class="n">outputs</span> <span class="o">=</span> <span class="n">forward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activation</span><span class="p">)</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">forward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span>
 
         <span class="c1"># Calculate error and append to list for visualization</span>
         <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">outputs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
         <span class="n">training_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 
-        <span class="n">gradients_wrt_weights</span><span class="p">,</span> <span class="n">gradients_wrt_biases</span> <span class="o">=</span> <span class="n">backward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">activation_deriv</span><span class="p">)</span>
+        <span class="n">gradients_wrt_weights</span><span class="p">,</span> <span class="n">gradients_wrt_biases</span> <span class="o">=</span> <span class="n">backward_pass</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">outputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">)</span>
 
         <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span> <span class="o">=</span> <span class="n">update_weights_biases</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">gradients_wrt_weights</span><span class="p">,</span> <span class="n">gradients_wrt_biases</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">training_errors</span>
+    <span class="k">return</span> <span class="n">training_errors</span>
 
 <span class="c1"># Function to visualize training results</span>
 <span class="k">def</span> <span class="nf">visualize_training_results</span><span class="p">(</span><span class="n">training_errors</span><span class="p">):</span>
@@ -1680,31 +1644,27 @@ if (typeof version == 'undefined') {
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># Define a function to train and visualize the MLP based on user inputs</span>
-<span class="k">def</span> <span class="nf">train_and_visualize</span><span class="p">(</span><span class="n">activation_func</span><span class="p">,</span> <span class="n">num_hidden_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">hidden_layer_units</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.41</span><span class="p">):</span>
-    <span class="n">activation</span><span class="p">,</span> <span class="n">activation_deriv</span> <span class="o">=</span> <span class="n">activation_funcs</span><span class="p">[</span><span class="n">activation_func</span><span class="p">]</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>  <span class="c1"># Example input</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># Example output</span>
-    <span class="n">epochs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># Randomly select epochs in range [10, 50] with step 10</span>
+<span class="c1"># Define neural network parameters</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>  <span class="c1"># Example input</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># Example output</span>
+<span class="n">num_hidden_layers</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">hidden_layer_units</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.41</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Fixed number of epochs</span>
 
-    <span class="n">weights</span><span class="p">,</span> <span class="n">biases</span><span class="p">,</span> <span class="n">training_errors</span> <span class="o">=</span> <span class="n">train_MLP</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">num_hidden_layers</span><span class="p">,</span> <span class="n">hidden_layer_units</span><span class="p">,</span> <span class="n">activation</span><span class="p">,</span> <span class="n">activation_deriv</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">epochs</span><span class="p">)</span>
-    <span class="n">visualize_training_results</span><span class="p">(</span><span class="n">training_errors</span><span class="p">)</span>
-
-<span class="c1"># Display the interactive widget for user inputs</span>
-<span class="n">interact</span><span class="p">(</span><span class="n">train_and_visualize</span><span class="p">,</span> <span class="n">activation_func</span><span class="o">=</span><span class="n">activation_buttons</span><span class="p">,</span>
-         <span class="n">num_hidden_layers</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">hidden_layer_units</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">learning_rate</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
+<span class="c1"># Train the MLP and visualize training results</span>
+<span class="n">training_errors</span> <span class="o">=</span> <span class="n">train_MLP</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">num_hidden_layers</span><span class="p">,</span> <span class="n">hidden_layer_units</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">epochs</span><span class="p">)</span>
+<span class="n">visualize_training_results</span><span class="p">(</span><span class="n">training_errors</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ac63929eeed3463593f683b976e4ae6b", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "f9b6da13733b4dc39e16f1cf72f83704", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.train_and_visualize(activation_func, num_hidden_layers=2, hidden_layer_units=4, learning_rate=0.41)&gt;
-</pre></div>
-</div>
+<img alt="../_images/b196f0961d7d67667ecefdbedcb833a188304c12a553dd28ebd6f77f6fefb101.png" src="../_images/b196f0961d7d67667ecefdbedcb833a188304c12a553dd28ebd6f77f6fefb101.png" />
 </div>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">What do this graph?</p>
+<p class="admonition-title">What does this graph mean?</p>
 <p>Observing the outcome of our training process, we notice that the <a class="reference external" href="https://fedmug.github.io/kbtu-ml-book/eval_metrics/regression.html#mean-squared-error-mse">Mean Square Error</a> (MSE) has reached a stage where its decrease halts, indicating that the model might have reached a local minimum or a plateau in its learning phase. This signifies that initially, the model shows improvement by reducing errors between its predictions and actual values. This scenario could arise because the MLP might have converged to a minimum point where additional adjustments to the weights and biases do not notably reduce the MSE.</p>
 </div>
 </section>
@@ -1746,13 +1706,13 @@ if (typeof version == 'undefined') {
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="aNePPjfKgQaP" data-shufflequestions="False"
+<div class="output text_html"><div id="gueQYwvEKqbh" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#aNePPjfKgQaP {
+#gueQYwvEKqbh {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1923,14 +1883,14 @@ if (typeof version == 'undefined') {
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_forward_process");
-            var questionsaNePPjfKgQaP;
+            var questionsgueQYwvEKqbh;
             try {
-               questionsaNePPjfKgQaP=JSON.parse(window.atob(element.innerHTML));
+               questionsgueQYwvEKqbh=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsaNePPjfKgQaP = JSON.parse(element.innerHTML);
+               questionsgueQYwvEKqbh = JSON.parse(element.innerHTML);
             }
-            console.log(questionsaNePPjfKgQaP);;
+            console.log(questionsgueQYwvEKqbh);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -2679,8 +2639,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("aNePPjfKgQaP")) {
-            show_questions(questionsaNePPjfKgQaP,  aNePPjfKgQaP); 
+          if(document.getElementById("gueQYwvEKqbh")) {
+            show_questions(questionsgueQYwvEKqbh,  gueQYwvEKqbh); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2689,8 +2649,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("aNePPjfKgQaP");
-        // console.log(document.getElementById("aNePPjfKgQaP"));
+        //console.log("gueQYwvEKqbh");
+        // console.log(document.getElementById("gueQYwvEKqbh"));
 
         try_show();
         }
@@ -2720,13 +2680,13 @@ if (typeof version == 'undefined') {
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="fTJLlhLHPKoo" data-shufflequestions="False"
+<div class="output text_html"><div id="TsHbmVlAfoYQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#fTJLlhLHPKoo {
+#TsHbmVlAfoYQ {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2897,14 +2857,14 @@ if (typeof version == 'undefined') {
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_backward_process");
-            var questionsfTJLlhLHPKoo;
+            var questionsTsHbmVlAfoYQ;
             try {
-               questionsfTJLlhLHPKoo=JSON.parse(window.atob(element.innerHTML));
+               questionsTsHbmVlAfoYQ=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsfTJLlhLHPKoo = JSON.parse(element.innerHTML);
+               questionsTsHbmVlAfoYQ = JSON.parse(element.innerHTML);
             }
-            console.log(questionsfTJLlhLHPKoo);;
+            console.log(questionsTsHbmVlAfoYQ);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -3653,8 +3613,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("fTJLlhLHPKoo")) {
-            show_questions(questionsfTJLlhLHPKoo,  fTJLlhLHPKoo); 
+          if(document.getElementById("TsHbmVlAfoYQ")) {
+            show_questions(questionsTsHbmVlAfoYQ,  TsHbmVlAfoYQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3663,8 +3623,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("fTJLlhLHPKoo");
-        // console.log(document.getElementById("fTJLlhLHPKoo"));
+        //console.log("TsHbmVlAfoYQ");
+        // console.log(document.getElementById("TsHbmVlAfoYQ"));
 
         try_show();
         }
@@ -3858,9 +3818,9 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="e100b798-7b8c-4f30-939a-10b24a40fe7e" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e100b798-7b8c-4f30-939a-10b24a40fe7e")) {                    Plotly.newPlot(                        "e100b798-7b8c-4f30-939a-10b24a40fe7e",                        [{"line":{"color":"blue","width":2},"marker":{"color":"blue","size":10},"mode":"lines+markers","name":"Case 1","x":[2,1.6],"y":[-3,-2.5],"type":"scatter"},{"line":{"color":"red","width":2},"marker":{"color":"red","size":10},"mode":"lines+markers","name":"Case 2","x":[1,0.7],"y":[-2,-1.6],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Parameter Updates after One Step of Gradient Descent"},"xaxis":{"title":{"text":"Theta 1"}},"yaxis":{"title":{"text":"Theta 2"}},"showlegend":true},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="03a014c4-2b78-4bc5-a846-38a0f9393dcb" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("03a014c4-2b78-4bc5-a846-38a0f9393dcb")) {                    Plotly.newPlot(                        "03a014c4-2b78-4bc5-a846-38a0f9393dcb",                        [{"line":{"color":"blue","width":2},"marker":{"color":"blue","size":10},"mode":"lines+markers","name":"Case 1","x":[2,1.6],"y":[-3,-2.5],"type":"scatter"},{"line":{"color":"red","width":2},"marker":{"color":"red","size":10},"mode":"lines+markers","name":"Case 2","x":[1,0.7],"y":[-2,-1.6],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Parameter Updates after One Step of Gradient Descent"},"xaxis":{"title":{"text":"Theta 1"}},"yaxis":{"title":{"text":"Theta 2"}},"showlegend":true},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('e100b798-7b8c-4f30-939a-10b24a40fe7e');
+var gd = document.getElementById('03a014c4-2b78-4bc5-a846-38a0f9393dcb');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -3933,13 +3893,13 @@ if (outputEl) {{
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="RjtSqKZZvLUt" data-shufflequestions="False"
+<div class="output text_html"><div id="JbBtRUfPdCGc" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#RjtSqKZZvLUt {
+#JbBtRUfPdCGc {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4110,14 +4070,14 @@ if (outputEl) {{
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_batch_process");
-            var questionsRjtSqKZZvLUt;
+            var questionsJbBtRUfPdCGc;
             try {
-               questionsRjtSqKZZvLUt=JSON.parse(window.atob(element.innerHTML));
+               questionsJbBtRUfPdCGc=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsRjtSqKZZvLUt = JSON.parse(element.innerHTML);
+               questionsJbBtRUfPdCGc = JSON.parse(element.innerHTML);
             }
-            console.log(questionsRjtSqKZZvLUt);;
+            console.log(questionsJbBtRUfPdCGc);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -4866,8 +4826,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("RjtSqKZZvLUt")) {
-            show_questions(questionsRjtSqKZZvLUt,  RjtSqKZZvLUt); 
+          if(document.getElementById("JbBtRUfPdCGc")) {
+            show_questions(questionsJbBtRUfPdCGc,  JbBtRUfPdCGc); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4876,8 +4836,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("RjtSqKZZvLUt");
-        // console.log(document.getElementById("RjtSqKZZvLUt"));
+        //console.log("JbBtRUfPdCGc");
+        // console.log(document.getElementById("JbBtRUfPdCGc"));
 
         try_show();
         }
