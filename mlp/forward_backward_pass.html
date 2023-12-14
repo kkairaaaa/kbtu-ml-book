@@ -598,13 +598,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="KntLrCEpwWXS" data-shufflequestions="False"
+<div class="output text_html"><div id="AQpjmdrzuEkH" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#KntLrCEpwWXS {
+#AQpjmdrzuEkH {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -775,14 +775,14 @@ document.write(`
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_n_layers");
-            var questionsKntLrCEpwWXS;
+            var questionsAQpjmdrzuEkH;
             try {
-               questionsKntLrCEpwWXS=JSON.parse(window.atob(element.innerHTML));
+               questionsAQpjmdrzuEkH=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsKntLrCEpwWXS = JSON.parse(element.innerHTML);
+               questionsAQpjmdrzuEkH = JSON.parse(element.innerHTML);
             }
-            console.log(questionsKntLrCEpwWXS);;
+            console.log(questionsAQpjmdrzuEkH);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1531,8 +1531,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("KntLrCEpwWXS")) {
-            show_questions(questionsKntLrCEpwWXS,  KntLrCEpwWXS); 
+          if(document.getElementById("AQpjmdrzuEkH")) {
+            show_questions(questionsAQpjmdrzuEkH,  AQpjmdrzuEkH); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1541,8 +1541,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("KntLrCEpwWXS");
-        // console.log(document.getElementById("KntLrCEpwWXS"));
+        //console.log("AQpjmdrzuEkH");
+        // console.log(document.getElementById("AQpjmdrzuEkH"));
 
         try_show();
         }
@@ -1698,12 +1698,15 @@ if (typeof version == 'undefined') {
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5f815250a1304f758456c5d650b1e718", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "c93723f341854a86ac91c717d3cc57bc", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.train_and_visualize(activation_func, num_hidden_layers=2, hidden_layer_units=4, learning_rate=0.41)&gt;
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f2aa285b6bac4c8aa12a6b1a221d9e0e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "58776c94e0dd468080e9fe988abaf21f", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.train_and_visualize(activation_func, num_hidden_layers=2, hidden_layer_units=4, learning_rate=0.41)&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">What do these values mean?</p>
 <p>Observing the outcome of our training process, we notice that the <a class="reference external" href="https://fedmug.github.io/kbtu-ml-book/eval_metrics/regression.html#mean-squared-error-mse">Mean Square Error</a> (MSE) has reached a stage where its decrease halts, indicating that the model might have reached a local minimum or a plateau in its learning phase. This signifies that initially, the model shows improvement by reducing errors between its predictions and actual values. This scenario could arise because the MLP might have converged to a minimum point where additional adjustments to the weights and biases do not notably reduce the MSE.</p>
+</div>
 </section>
 <section id="forward-pass">
 <h3>Forward pass<a class="headerlink" href="#forward-pass" title="Permalink to this heading">#</a></h3>
@@ -1728,7 +1731,7 @@ if (typeof version == 'undefined') {
 <p><span class="math notranslate nohighlight">\(\boldsymbol W^{(n)}\)</span> has shape <span class="math notranslate nohighlight">\(n_{\text{hidden}{n-1}}\times n{\text{output}}\)</span>.
 <span class="math notranslate nohighlight">\(\text{Output}_{\text{final}}\)</span> represents the final output of the network.</p>
 <a class="reference internal image-reference" href="https://static.independent.co.uk/2023/05/09/15/sats.jpg"><img alt="Alt text" src="https://static.independent.co.uk/2023/05/09/15/sats.jpg" style="width: 500px;" /></a>
-<p><span style="display:none" id="q_forward_process">W3sicXVlc3Rpb24iOiAiSG93IG1hbnkgbGVhcm5hYmxlIHBhcmFtZXRlcnMgaW4gdGhlIE1MUCB3b3VsZCBiZSBpZiBMID0gMSwgd2l0aCBhbiBpbnB1dCBsYXllciBvZiAyIG5ldXJvbnMsIGEgaGlkZGVuIGxheWVyIG9mIDMgbmV1cm9ucywgYW5kIGFuIG91dHB1dCBsYXllciBvZiAxIG5ldXJvbj8iLCAidHlwZSI6ICJudW1lcmljIiwgImFuc3dlcnMiOiBbeyJ0eXBlIjogInZhbHVlIiwgInZhbHVlIjogMTEsICJjb3JyZWN0IjogdHJ1ZSwgImZlZWRiYWNrIjogIkNvcnJlY3QhIFRoZXJlIGFyZSAxMSBsZWFybmFibGUgcGFyYW1ldGVycyEifSwgeyJ0eXBlIjogImRlZmF1bHQiLCAiZmVlZGJhY2siOiAiT29wcy4uLiBTb21ldGhpbmcgd2VudCB3cm9uZywgdHJ5IGFnYWluISJ9XX1d</span></p>
+<p><span style="display:none" id="q_forward_process">W3sicXVlc3Rpb24iOiAiSG93IG1hbnkgbGVhcm5hYmxlIHBhcmFtZXRlcnMgaW4gdGhlIE1MUCB3b3VsZCBiZSBpZiBMID0gMSwgd2l0aCBhbiBpbnB1dCBsYXllciBvZiAzIG5ldXJvbnMsIGEgaGlkZGVuIGxheWVyIG9mIDIgbmV1cm9ucywgYW5kIGFuIG91dHB1dCBsYXllciBvZiAxIG5ldXJvbj8iLCAidHlwZSI6ICJudW1lcmljIiwgImFuc3dlcnMiOiBbeyJ0eXBlIjogInZhbHVlIiwgInZhbHVlIjogMTMsICJjb3JyZWN0IjogdHJ1ZSwgImZlZWRiYWNrIjogIkNvcnJlY3QhIFRoZXJlIGFyZSAxMyBsZWFybmFibGUgcGFyYW1ldGVycyEifSwgeyJ0eXBlIjogImRlZmF1bHQiLCAiZmVlZGJhY2siOiAiT29wcy4uLiBTb21ldGhpbmcgd2VudCB3cm9uZywgdHJ5IGFnYWluISJ9XX1d</span></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1743,13 +1746,13 @@ if (typeof version == 'undefined') {
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="hCRlpNPPVRlw" data-shufflequestions="False"
+<div class="output text_html"><div id="fCiHXKZJlvtg" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#hCRlpNPPVRlw {
+#fCiHXKZJlvtg {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1920,14 +1923,14 @@ if (typeof version == 'undefined') {
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_forward_process");
-            var questionshCRlpNPPVRlw;
+            var questionsfCiHXKZJlvtg;
             try {
-               questionshCRlpNPPVRlw=JSON.parse(window.atob(element.innerHTML));
+               questionsfCiHXKZJlvtg=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionshCRlpNPPVRlw = JSON.parse(element.innerHTML);
+               questionsfCiHXKZJlvtg = JSON.parse(element.innerHTML);
             }
-            console.log(questionshCRlpNPPVRlw);;
+            console.log(questionsfCiHXKZJlvtg);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -2676,8 +2679,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("hCRlpNPPVRlw")) {
-            show_questions(questionshCRlpNPPVRlw,  hCRlpNPPVRlw); 
+          if(document.getElementById("fCiHXKZJlvtg")) {
+            show_questions(questionsfCiHXKZJlvtg,  fCiHXKZJlvtg); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2686,8 +2689,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("hCRlpNPPVRlw");
-        // console.log(document.getElementById("hCRlpNPPVRlw"));
+        //console.log("fCiHXKZJlvtg");
+        // console.log(document.getElementById("fCiHXKZJlvtg"));
 
         try_show();
         }
@@ -2698,11 +2701,11 @@ if (typeof version == 'undefined') {
 <section id="back-propagation">
 <h3>Back propagation<a class="headerlink" href="#back-propagation" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/backprop.png"><img alt="Alt text" src="../_images/backprop.png" style="width: 600px;" /></a>
-<p>Propagate gradients backward through the network from the output to the input layers to update the weights and biases.</p>
+<p>Proceeding to the backward propagation phase, previously indicated as the stage following the forward pass, where adaptations to the weights and biases occur in response to the network’s output. During this phase, calculations encompass the Error Backpropagation, Parameter Updates, Learning Rate Adjustments, and related operations.</p>
 <p><span class="math notranslate nohighlight">\(\nabla_{\boldsymbol X_i}\mathcal L\)</span>: Denotes the gradients of the loss function with respect to the activations or hidden representations at layer <span class="math notranslate nohighlight">\(i\)</span>. These gradients are computed successively backward through the layers.</p>
 <p><span class="math notranslate nohighlight">\(\nabla_{\boldsymbol W_i} \mathcal L\)</span>: Represents the gradients of the loss function with respect to the weights <span class="math notranslate nohighlight">\(\boldsymbol W_i\)</span> connecting the neurons between layer <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(i+1\)</span>. These gradients are used to update the weights in order to minimize the loss.</p>
 <p><span class="math notranslate nohighlight">\(\nabla_{\boldsymbol B_i}\mathcal L\)</span>: Denotes the gradients of the loss function with respect to the biases <span class="math notranslate nohighlight">\(\boldsymbol B_i\)</span> for layer <span class="math notranslate nohighlight">\(i+1\)</span>. These gradients help adjust the biases during the training process.</p>
-<p><span style="display:none" id="q_backward_process">W3sicXVlc3Rpb24iOiAiV2hhdCBpcyB0aGUgcHJpbWFyeSBwdXJwb3NlIG9mIHRoZSBiYWNrd2FyZCBwYXNzIGluIGJhY2twcm9wYWdhdGlvbiwgYW5kIHdoYXQgaW5mb3JtYXRpb24gZG9lcyBpdCBjb21wdXRlIGZvciBlYWNoIGxheWVyIG9mIHRoZSBuZXVyYWwgbmV0d29yaz8iLCAidHlwZSI6ICJtdWx0aXBsZV9jaG9pY2UiLCAiYW5zd2VycyI6IFt7ImFuc3dlciI6ICJUaGUgYmFja3dhcmQgcGFzcyBpcyB1c2VkIHRvIGNvbXB1dGUgdGhlIGxvc3MgZnVuY3Rpb24gb25seS4iLCAiY29ycmVjdCI6IGZhbHNlLCAiZmVlZGJhY2siOiAiSW5jb3JyZWN0LiBXaGlsZSB0aGUgYmFja3dhcmQgcGFzcyBpcyBpbnZvbHZlZCBpbiBjYWxjdWxhdGluZyBncmFkaWVudHMgcmVsYXRlZCB0byB0aGUgbG9zcyBmdW5jdGlvbiwgaXRzIHNvbGUgcHVycG9zZSBpcyBub3QgbGltaXRlZCB0byBjb21wdXRpbmcgdGhlIGxvc3MgZnVuY3Rpb24gaXRzZWxmLiJ9LCB7ImFuc3dlciI6ICJUaGUgYmFja3dhcmQgcGFzcyBjb21wdXRlcyBncmFkaWVudHMgb2YgdGhlIGxvc3MgZnVuY3Rpb24gd2l0aCByZXNwZWN0IHRvIHRoZSBuZXR3b3JrJ3MgcGFyYW1ldGVycyAoYWN0aXZhdGlvbnMsIHdlaWdodHMsIGJpYXNlcykgdG8gYWRqdXN0IHRoZW0gZm9yIG1pbmltaXppbmcgdGhlIG92ZXJhbGwgZXJyb3IuIiwgImNvcnJlY3QiOiBmYWxzZSwgImZlZWRiYWNrIjogIkluY29ycmVjdC4gVGhlIHVwZGF0ZSBwcm9jZXNzIG9jY3VycyB1c2luZyB0aGVzZSBncmFkaWVudHMgaW4gY29uanVuY3Rpb24gd2l0aCBhbiBvcHRpbWl6YXRpb24gYWxnb3JpdGhtIChlLmcuLCBncmFkaWVudCBkZXNjZW50KSBkdXJpbmcgdGhlIHRyYWluaW5nIHBoYXNlLCBub3QgZGlyZWN0bHkgZHVyaW5nIHRoZSBiYWNrd2FyZCBwYXNzLiJ9LCB7ImFuc3dlciI6ICJUaGUgYmFja3dhcmQgcGFzcyBjb21wdXRlcyBncmFkaWVudHMgb2YgdGhlIGxvc3MgZnVuY3Rpb24gd2l0aCByZXNwZWN0IHRvIHRoZSBuZXR3b3JrJ3MgcGFyYW1ldGVycyAoYWN0aXZhdGlvbnMsIHdlaWdodHMsIGJpYXNlcykgdG8gYWRqdXN0IHRoZW0gZm9yIG1pbmltaXppbmcgdGhlIG92ZXJhbGwgZXJyb3IuIiwgImNvcnJlY3QiOiB0cnVlLCAiZmVlZGJhY2siOiAiQ29ycmVjdCEgVGhlIHByaW1hcnkgcHVycG9zZSBvZiB0aGUgYmFja3dhcmQgcGFzcyBpbiBiYWNrcHJvcGFnYXRpb24gaXMgdG8gY2FsY3VsYXRlIGdyYWRpZW50cyBvZiB0aGUgbG9zcyBmdW5jdGlvbiB3aXRoIHJlc3BlY3QgdG8gdGhlIG5ldHdvcmsncyBwYXJhbWV0ZXJzLiJ9LCB7ImFuc3dlciI6ICJUaGUgYmFja3dhcmQgcGFzcyBoZWxwcyBpbiB0aGUgaW5pdGlhbCBjb21wdXRhdGlvbiBvZiB0aGUgZm9yd2FyZCBwYXNzIGJ5IHByb3BhZ2F0aW5nIGlucHV0IGRhdGEgYmFja3dhcmQgdGhyb3VnaCB0aGUgbmV0d29yay4iLCAiY29ycmVjdCI6IGZhbHNlLCAiZmVlZGJhY2siOiAiSW5jb3JyZWN0LiBUaGUgYmFja3dhcmQgcGFzcyBvY2N1cnMgYWZ0ZXIgdGhlIGZvcndhcmQgcGFzcyBhbmQgaW52b2x2ZXMgcHJvcGFnYXRpbmcgZ3JhZGllbnRzIGJhY2t3YXJkIHRocm91Z2ggdGhlIG5ldHdvcmsuICJ9XX1d</span></p>
+<p><span style="display:none" id="q_backward_process">W3sicXVlc3Rpb24iOiAiV2hhdCBpcyB0aGUgcHJpbWFyeSBwdXJwb3NlIG9mIHRoZSBiYWNrd2FyZCBwYXNzPyIsICJ0eXBlIjogIm11bHRpcGxlX2Nob2ljZSIsICJhbnN3ZXJzIjogW3siYW5zd2VyIjogIlRoZSBiYWNrd2FyZCBwYXNzIGlzIHVzZWQgdG8gY29tcHV0ZSB0aGUgbG9zcyBmdW5jdGlvbiBvbmx5LiIsICJjb3JyZWN0IjogZmFsc2UsICJmZWVkYmFjayI6ICJJbmNvcnJlY3QuIFdoaWxlIHRoZSBiYWNrd2FyZCBwYXNzIGlzIGludm9sdmVkIGluIGNhbGN1bGF0aW5nIGdyYWRpZW50cyByZWxhdGVkIHRvIHRoZSBsb3NzIGZ1bmN0aW9uLCBpdHMgc29sZSBwdXJwb3NlIGlzIG5vdCBsaW1pdGVkIHRvIGNvbXB1dGluZyB0aGUgbG9zcyBmdW5jdGlvbiBpdHNlbGYuIn0sIHsiYW5zd2VyIjogIkNvbXB1dGF0aW9uIG9mIHRoZSBncmFkaWVudCBvZiB0aGUgbG9zcyBmdW5jdGlvbiB3aXRoIHJlc3BlY3QgdG8gdGhlIGJpYXNlcy4iLCAiY29ycmVjdCI6IGZhbHNlLCAiZmVlZGJhY2siOiAiSW5jb3JyZWN0LiBUaGUgdXBkYXRlIHByb2Nlc3Mgb2NjdXJzIHVzaW5nIHRoZXNlIGdyYWRpZW50cyBpbiBjb25qdW5jdGlvbiB3aXRoIGFuIG9wdGltaXphdGlvbiBhbGdvcml0aG0gKGUuZy4sIGdyYWRpZW50IGRlc2NlbnQpIGR1cmluZyB0aGUgdHJhaW5pbmcgcGhhc2UsIG5vdCBkaXJlY3RseSBkdXJpbmcgdGhlIGJhY2t3YXJkIHBhc3MuIn0sIHsiYW5zd2VyIjogIkNhbGN1bGF0aW9uIG9mIHRoZSBncmFkaWVudCBvZiB0aGUgbG9zcyBmdW5jdGlvbiB3aXRoIHJlc3BlY3QgdG8gdGhlIHdlaWdodHMuIiwgImNvcnJlY3QiOiB0cnVlLCAiZmVlZGJhY2siOiAiQ29ycmVjdCEgVGhlIHByaW1hcnkgcHVycG9zZSBvZiB0aGUgYmFja3dhcmQgcGFzcyBpbiBiYWNrcHJvcGFnYXRpb24gaXMgdG8gY2FsY3VsYXRlIGdyYWRpZW50cyBvZiB0aGUgbG9zcyBmdW5jdGlvbiB3aXRoIHJlc3BlY3QgdG8gdGhlIG5ldHdvcmsncyBwYXJhbWV0ZXJzLiJ9LCB7ImFuc3dlciI6ICJUaGUgYmFja3dhcmQgcGFzcyBoZWxwcyBpbiB0aGUgaW5pdGlhbCBjb21wdXRhdGlvbiBvZiB0aGUgZm9yd2FyZCBwYXNzIGJ5IHByb3BhZ2F0aW5nIGlucHV0IGRhdGEgYmFja3dhcmQgdGhyb3VnaCB0aGUgbmV0d29yay4iLCAiY29ycmVjdCI6IGZhbHNlLCAiZmVlZGJhY2siOiAiSW5jb3JyZWN0LiBUaGUgYmFja3dhcmQgcGFzcyBvY2N1cnMgYWZ0ZXIgdGhlIGZvcndhcmQgcGFzcyBhbmQgaW52b2x2ZXMgcHJvcGFnYXRpbmcgZ3JhZGllbnRzIGJhY2t3YXJkIHRocm91Z2ggdGhlIG5ldHdvcmsuICJ9XX1d</span></p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -2717,13 +2720,13 @@ if (typeof version == 'undefined') {
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="WuxhzcUKsmYH" data-shufflequestions="False"
+<div class="output text_html"><div id="dgkDtWNkFTDW" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#WuxhzcUKsmYH {
+#dgkDtWNkFTDW {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2894,14 +2897,14 @@ if (typeof version == 'undefined') {
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_backward_process");
-            var questionsWuxhzcUKsmYH;
+            var questionsdgkDtWNkFTDW;
             try {
-               questionsWuxhzcUKsmYH=JSON.parse(window.atob(element.innerHTML));
+               questionsdgkDtWNkFTDW=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionsWuxhzcUKsmYH = JSON.parse(element.innerHTML);
+               questionsdgkDtWNkFTDW = JSON.parse(element.innerHTML);
             }
-            console.log(questionsWuxhzcUKsmYH);;
+            console.log(questionsdgkDtWNkFTDW);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -3650,8 +3653,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("WuxhzcUKsmYH")) {
-            show_questions(questionsWuxhzcUKsmYH,  WuxhzcUKsmYH); 
+          if(document.getElementById("dgkDtWNkFTDW")) {
+            show_questions(questionsdgkDtWNkFTDW,  dgkDtWNkFTDW); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3660,8 +3663,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("WuxhzcUKsmYH");
-        // console.log(document.getElementById("WuxhzcUKsmYH"));
+        //console.log("dgkDtWNkFTDW");
+        // console.log(document.getElementById("dgkDtWNkFTDW"));
 
         try_show();
         }
@@ -3855,9 +3858,9 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-        </div><div class="output text_html"><div>                            <div id="3072e375-26d9-4879-9d98-0d1af481b8c9" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3072e375-26d9-4879-9d98-0d1af481b8c9")) {                    Plotly.newPlot(                        "3072e375-26d9-4879-9d98-0d1af481b8c9",                        [{"line":{"color":"blue","width":2},"marker":{"color":"blue","size":10},"mode":"lines+markers","name":"Case 1","x":[2,1.6],"y":[-3,-2.5],"type":"scatter"},{"line":{"color":"red","width":2},"marker":{"color":"red","size":10},"mode":"lines+markers","name":"Case 2","x":[1,0.7],"y":[-2,-1.6],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Parameter Updates after One Step of Gradient Descent"},"xaxis":{"title":{"text":"Theta 1"}},"yaxis":{"title":{"text":"Theta 2"}},"showlegend":true},                        {"responsive": true}                    ).then(function(){
+        </div><div class="output text_html"><div>                            <div id="6e08dc1b-eb80-4ca4-8305-e966c6251822" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("6e08dc1b-eb80-4ca4-8305-e966c6251822")) {                    Plotly.newPlot(                        "6e08dc1b-eb80-4ca4-8305-e966c6251822",                        [{"line":{"color":"blue","width":2},"marker":{"color":"blue","size":10},"mode":"lines+markers","name":"Case 1","x":[2,1.6],"y":[-3,-2.5],"type":"scatter"},{"line":{"color":"red","width":2},"marker":{"color":"red","size":10},"mode":"lines+markers","name":"Case 2","x":[1,0.7],"y":[-2,-1.6],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Parameter Updates after One Step of Gradient Descent"},"xaxis":{"title":{"text":"Theta 1"}},"yaxis":{"title":{"text":"Theta 2"}},"showlegend":true},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('3072e375-26d9-4879-9d98-0d1af481b8c9');
+var gd = document.getElementById('6e08dc1b-eb80-4ca4-8305-e966c6251822');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -3930,13 +3933,13 @@ if (outputEl) {{
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="keMpnemDOlnO" data-shufflequestions="False"
+<div class="output text_html"><div id="irfNPcPIuBaH" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#keMpnemDOlnO {
+#irfNPcPIuBaH {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -4107,14 +4110,14 @@ if (outputEl) {{
     }
 }
 </style></div><script type="application/javascript">var element=document.getElementById("q_batch_process");
-            var questionskeMpnemDOlnO;
+            var questionsirfNPcPIuBaH;
             try {
-               questionskeMpnemDOlnO=JSON.parse(window.atob(element.innerHTML));
+               questionsirfNPcPIuBaH=JSON.parse(window.atob(element.innerHTML));
             } catch(err) {
                console.log("Fell into catch");
-               questionskeMpnemDOlnO = JSON.parse(element.innerHTML);
+               questionsirfNPcPIuBaH = JSON.parse(element.innerHTML);
             }
-            console.log(questionskeMpnemDOlnO);;
+            console.log(questionsirfNPcPIuBaH);;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -4863,8 +4866,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("keMpnemDOlnO")) {
-            show_questions(questionskeMpnemDOlnO,  keMpnemDOlnO); 
+          if(document.getElementById("irfNPcPIuBaH")) {
+            show_questions(questionsirfNPcPIuBaH,  irfNPcPIuBaH); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -4873,8 +4876,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("keMpnemDOlnO");
-        // console.log(document.getElementById("keMpnemDOlnO"));
+        //console.log("irfNPcPIuBaH");
+        // console.log(document.getElementById("irfNPcPIuBaH"));
 
         try_show();
         }
